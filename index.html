@@ -10,8 +10,11 @@
 	<style>
 		body {
 			font-family: Arial, Helvetica, sans-serif;
-			background-image: url(img7.png);
+			background-image: url(imgs/img7.png);
+			background-repeat: no-repeat;
+			background-size: 100%;
 		}
+
 
 		.menu {
 			font-family: Arial, Helvetica, sans-serif;
@@ -42,6 +45,25 @@
 			letter-spacing: 5px;
 		}
 
+		@media (max-width: 600px) {
+			.menu {
+				font-size: 50%;
+			}
+
+			.menu a:hover {
+				font-size: 50%;
+			}
+
+			.f1 {
+				padding-right: 1rem;
+			}
+
+			.f1 h1 {
+				padding-right: 3rem;
+			}
+		}
+
+
 		.logo {
 			width: 10%;
 			padding-top: 25px;
@@ -52,8 +74,6 @@
 		.f1 {
 			padding-top: 25px;
 			padding-left: 62%;
-			text-align-last: left;
-			
 			padding-bottom: 40px;
 		}
 
@@ -74,11 +94,38 @@
 			letter-spacing: 5px;
 		}
 
+		  footer {
+		  border-top: 1px solid #333;
+		  bottom: 0;
+		  left: 0;
+		  height: 40px;
+		  position: fixed;
+		  width: 100%;
+		  text-align: center;
+		  background-color: black;
+		  color: white;
+		  font-size: 15px;
+		  padding-top: 30px;
+		  padding-bottom: 15px;
+		}
+
+		footer a {
+			text-decoration: inherit;
+			color: white;
+		}
+
+		footer a:hover {
+			color: black;
+			background-color: white;
+			letter-spacing: 5px;
+			border-radius: 6px;
+		}
+
 </style>
 </head>
 <body>
 
-	<img src="logo.png" align="left" class="logo">
+	<img src="imgs/logo.png" align="left" class="logo">
 	
 
 	<div class="menu">
@@ -91,7 +138,7 @@
 
 	</div>
 
-	<div class="f1" align="right">
+	<div class="f1">
 
 			<h1>Agradecemos o contato!</h1>
 			<p>Retornaremos o mais rápido possível.</p>
@@ -100,6 +147,11 @@
 
 		</form>
 	</div>
+
+	<footer class="rodape">
+		2022. Todos os direitos reservados © PhotoMe Fotografia. Site criado por <a href="">Jéssica Cristina</a>.
+
+	</footer>
 
 
 	</body>

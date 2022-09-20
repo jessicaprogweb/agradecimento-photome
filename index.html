@@ -3,78 +3,171 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Contato</title>
-
-	<script src="https://kit.fontawesome.com/208e042eb5.js" crossorigin="anonymous"></script>
+	<title>Obrigada!</title>
 
 	<style>
-		body {
-			font-family: Arial, Helvetica, sans-serif;
-			background-image: url(imgs/img7.png);
-			background-repeat: no-repeat;
-			background-size: 100%;
-		}
+		/*:root {
+	--royal-blue-light: #404eed;
+	--royal-blue-dark: #3946d4;
+	--white: #fff;
+	--background:  #e2e3e9;
+}*/
+
+/** {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}*/
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background-image: url(img11.png);
+	background-repeat: no-repeat;
+	background-size: 100%vh;
+
+}
+
+a {
+	color: var(--white);
+	text-decoration: none;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 4.6875rem;
+	padding: 1rem;
+
+}
+
+.logo {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.menu {
+	list-style: none;
+	display: flex;
+	gap: 0.5rem;
+	
+}
+
+.menu a {
+	display: block;
+	padding: 1rem 0;
+	padding-left: 2rem;
+	padding-right: 2rem;
+	border-radius: 0.5rem;
+	color: black;
 
 
-		.menu {
-			font-family: Arial, Helvetica, sans-serif;
-			font-size: 15px;
-			text-align: right;
-			padding-top: 30px;
-			padding-bottom: 30px;
-			border-style: solid none solid none;
-			border-color: black black black black;
-			border-width: 6px 0px 6px 0px;
+}
 
+.menu a:hover {
+	color: #5c5b5b;
+	letter-spacing: 5px;
+	transition: 0.4s;
+}
 
+/*------------menu mobile---------------*/
 
-		}
+.label-menu, .checkbox {
+	display: none;
+}
 
-		.menu a {
-			text-decoration: inherit;
-			color: black;
-			padding-right: 15px;
-			padding-left: 15px;
-		}
+@media (max-width: 600px) {
+	
+	body {
+		background-size: 100%;
+		background-image: url(img12.png);
 
-		.menu a:hover {
-			color: darkgrey;
-			padding-top: 10px;
-			padding-bottom: 10px;
-			font-size: 15px;
-			letter-spacing: 5px;
-		}
+	}
 
-		@media (max-width: 600px) {
-			.menu {
-				font-size: 50%;
-			}
+	.menu {
+		display: block;
+		position: absolute;
+		top: 4.6875rem;
+		padding-top: 3rem;
+		left: 0;
+		background: black;
+		text-align: center;
+		width: 90%;
+		height: 0;
+		z-index: 1;
+		visibility: hidden;
+		overflow-y: hidden;
+		transition: 0.5s;
 
-			.menu a:hover {
-				font-size: 50%;
-			}
+	}
 
-			.f1 {
-				padding-right: 1rem;
-			}
+	.menu a {
+		padding: 1rem 0;
+		margin-inline: 1rem;
+		border-bottom: 0.0625rem rolid rgba(0, 0, 0, 0.16);
+		border-radius: 0;
+		color: white;
+	}
 
-			.f1 h1 {
-				padding-right: 3rem;
-			}
-		}
+	.label-menu {
+		display: flex;
+		align-items: center;
+		gap:  0.5rem;
+		color: black;
+		padding: 1rem 0;
+		cursor: pointer;
+	}
 
+	.label-menu:hover {
+		letter-spacing: 5px;
+		transition: 0.5s;
+	}
 
-		.logo {
-			width: 10%;
-			padding-top: 25px;
-			padding-left: 10px;
-		}
+	.hamburger {
+		border-top: 0.125rem solid;
+		width: 1.25rem;
+	}
 
+	.hamburger::before,
+	.hamburger::after {
+		content: " ";
+		display: block;
+		width: 1.25rem;
+		height: 0.125rem;
+		background: currentColor;
+		margin-top: 0.3125rem;
+		position: relative;
+		transition: 0.3s;
+	}
+
+	.checkbox:checked ~ .menu {
+		height: calc(100vh - 4.6875rem);
+		visibility: visible;
+		overflow-y: auto;
+	}
+
+	.checkbox:checked ~ .label-menu .hamburger {
+		border-top-color: transparent;
+
+	}
+
+	/*representa o x botão fechar do menu mobile*/
+
+	.checkbox:checked ~ .label-menu .hamburger::before {
+		transform: rotate(135deg);
+	}
+
+	.checkbox:checked ~ .label-menu .hamburger::after {
+		transform: rotate(-135deg);
+		top: -0.4375rem;
+	}
+}
 
 		.f1 {
 			padding-top: 25px;
-			padding-left: 62%;
+			padding-left: 50%;
 			padding-bottom: 40px;
+
 		}
 
 		.f1 a {
@@ -85,13 +178,13 @@
 			background-color: white;
 			border-radius: 4px;
 
-
 		}
 
 		.f1 a:hover {
 			background-color: black;
 			color: white;
 			letter-spacing: 5px;
+			transition: 0.5s;
 		}
 
 		  footer {
@@ -119,26 +212,38 @@
 			background-color: white;
 			letter-spacing: 5px;
 			border-radius: 6px;
+			transition: 0.5s;
 		}
 
-</style>
+		*::-webkit-scrollbar {
+		  width: 12px;
+		}
+
+		*::-webkit-scrollbar-track {
+		  background: black;
+		}
+	</style>
 </head>
 <body>
+	<header class="header">
+		<a href="/" class="logo">Photo<span style="color: #5c5b5b;">Me</span></a>
 
-	<img src="imgs/logo.png" align="left" class="logo">
-	
+		<nav class="nav">
+			<!--menu mobile-->
+			<input type="checkbox" id="checkbox" class="checkbox">
+			<label for="checkbox" class="label-menu">Menu<span class="hamburger"></span></label>
+			
+			<!--itens do menu-->
+			<ul class="menu">
+				<li><a href="/">Home</a></li>
+				<li><a href="/">Potfólio</a></li>
+				<li><a href="/">Serviços</a></li>
+				<li><a href="/">Sobre</a></li>
+				<li><a href="/">Contato</a></li>
+		</nav>
+	</header>
 
-	<div class="menu">
-		
-		<a href="index.html">Home</a> •
-		<a href="">Portfolio</a> •
-		<a href="">Serviços</a> •
-		<a href="">Sobre</a> •
-		<a href="contato.html">Contato</a>
-
-	</div>
-
-	<div class="f1">
+			<div class="f1">
 
 			<h1>Agradecemos o contato!</h1>
 			<p>Retornaremos o mais rápido possível.</p>
@@ -154,5 +259,5 @@
 	</footer>
 
 
-	</body>
+</body>
 </html>
